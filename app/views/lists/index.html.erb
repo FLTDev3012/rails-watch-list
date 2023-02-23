@@ -1,0 +1,15 @@
+<h1>List of movies types</h1>
+<%= link_to "Add a neww list type", new_list_path %>
+<ul>
+  <% @lists.each do |list| %>
+  <br>
+  <br>
+  <li>
+    <p><%= list.name %></p>
+    <%= link_to "Delete the type list",
+  list_path(list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%= link_to "See the list", list_path(list) %>
+  </li>
+  <% end %>
+<ul>

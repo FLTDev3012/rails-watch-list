@@ -1,0 +1,7 @@
+
+<h2><%= @list.name %> list</h2>
+
+<p>ceci est la page de la list de <%= @list.name %></p>
+
+<%= link_to "back to all categories-lists", lists_path %>
+<%= link_to "add a movie at this list",  new_movie_bookmark_path[:movie_id] %>

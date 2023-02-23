@@ -1,0 +1,15 @@
+<h1>top movies</h1>
+<ul>
+  <% @movies.each do |movie| %>
+  <br>
+  <br>
+  <li>
+    <p><%= movie.title %></p>
+    <p><%= movie.overview %></p>
+    <p><%= movie.poster_url %></p>
+    <p><%= movie.rating %></p>
+    <%= link_to "See the movie", movie_path(movie) %>
+    <%= link_to "Add the movie", movie_path(movie) %>
+  </li>
+  <% end %>
+<ul>
