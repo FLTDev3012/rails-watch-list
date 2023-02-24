@@ -5,9 +5,11 @@
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
-   <li><h3><%= bookmark.movie.title %></h3></li>
-   <li><%= bookmark.movie.overview %></li>
-   <li><%= bookmark.movie.rating %></li>
+    <div class="bg-card">
+      <li><h3><%= bookmark.movie.title %></h3></li>
+      <li><%= bookmark.movie.overview %></li>
+      <li><%= bookmark.movie.rating %></li>
+   </div>
    <br><br><br>
   <% end %>
 </ul>
