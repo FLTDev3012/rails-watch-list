@@ -1,15 +1,13 @@
 <h1>index</h1>
 <ul>
   <% @movies.each do |movie| %>
-  <br>
-  <br>
-  <li>
-    <p><%= movie.title %></p>
-    <p><%= movie.overview %></p>
-    <p><%= movie.poster_url %></p>
-    <p><%= movie.rating %></p>
+    <div class="bg-card my-5">
+      <p><%= movie.title %></p>
+      <p><%= movie.overview %></p>
+      <p><%= movie.poster_url %></p>
+      <p><%= movie.rating %></p>
 
-    <%= link_to "Add the movie at your list", list_movie_bookmarks_path(@list,movie), data: {turbo_method: :post} %>
-  </li>
+      <%= link_to "Add the movie at your list", list_movie_bookmarks_path(@list,movie), data: {turbo_method: :post} %>
+    </div>
   <% end %>
 <ul>

@@ -23,9 +23,9 @@
       <div class="bg-card my-5">
         <p class="text-center"><%= list.name %></p>
         <div class='text-center'>
-          <p><%= link_to "See the list", list_path(list) %> ||
+          <p><%= link_to "See the list", list_path(list), class: "button-base"%> ||
           <%= link_to "Delete the list", list_path(list),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </p>
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-base" %> </p>
         </div>
       </div>
     <% end %>

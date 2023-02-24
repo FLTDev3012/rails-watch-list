@@ -1,18 +1,14 @@
+<div class="text-center">
+  <h2><%= @list.name %> list</h2>
 
-<h2><%= @list.name %> list</h2>
-
-<p>ceci est la page de la list de <%= @list.name %></p>
-
-<ul>
+  <p>ceci est la page de la list de <%= @list.name %></p>
+  <%= link_to "add a movie at this list",  list_movies_path(@list), class: "button-base" %> ||
+  <%= link_to "back to all categories-lists", lists_path, class: "back-button"  %>
+</div>
   <% @bookmarks.each do |bookmark| %>
-    <div class="bg-card">
+    <div class="bg-card my-5">
       <li><h3><%= bookmark.movie.title %></h3></li>
       <li><%= bookmark.movie.overview %></li>
-      <li><%= bookmark.movie.rating %></li>
+      <li>rating : <%= bookmark.movie.rating %> / 10</li>
    </div>
-   <br><br><br>
   <% end %>
-</ul>
-
-<%= link_to "add a movie at this list",  list_movies_path(@list) %> ||
-<%= link_to "back to all categories-lists", lists_path, class: "back-button"  %>
