@@ -18,16 +18,14 @@ Rails.application.routes.draw do
 
 
   resources :lists do
-    resources :movies, only: [:new, :create]
-  end
-
-  resources :movies, only: :destroy do
-    resources :bookmarks, only: [:new, :create] do
-      collection do
-        get :top
-      end
+    resources :movies, only: [:index] do
+      resources :bookmarks, only: [:create]
     end
   end
 
-  resources :movies
+  resources :movies, only: :destroy do
+    collection do
+      get :top
+    end
+  end
 end

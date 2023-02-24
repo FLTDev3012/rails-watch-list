@@ -1,15 +1,20 @@
 <h1>List of movies types</h1>
 <%= link_to "Add a neww list type", new_list_path %>
 <ul>
+<br><br>
+  <li><strong>See the Top list movies</strong> ( > 8 / 10 )</li>
+  <br>
+  <%= link_to "See the Top list !!! more than 8 / 10", top_movies_path %>
   <% @lists.each do |list| %>
   <br>
   <br>
   <li>
     <p><%= list.name %></p>
+    <%= link_to "See the list", list_path(list) %> ||
     <%= link_to "Delete the type list",
   list_path(list),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-    <%= link_to "See the list", list_path(list) %>
+
   </li>
   <% end %>
 <ul>
