@@ -1,20 +1,33 @@
-<h1>List of movies types</h1>
-<%= link_to "Add a neww list type", new_list_path %>
-<ul>
-<br><br>
-  <li><strong>See the Top list movies</strong> ( > 8 / 10 )</li>
-  <br>
-  <%= link_to "See the Top list !!! more than 8 / 10", top_movies_path %>
-  <% @lists.each do |list| %>
-  <br>
-  <br>
-  <li>
-    <p><%= list.name %></p>
-    <%= link_to "See the list", list_path(list) %> ||
-    <%= link_to "Delete the type list",
-  list_path(list),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
-  </li>
-  <% end %>
-<ul>
+
+<div class="container py-5">
+
+  <div class="text-center my-5">
+    <h1>List of movies types</h1>
+  </div>
+
+  <div class="text-center my-5">
+    <%= link_to "Add a neww list type", new_list_path, class: "gold-btn" %>
+  </div>
+
+  <p class="text-center"><strong>See the Top list movies</strong> ( > 8 / 10 )</p>
+
+
+  <div class="text-center">
+    <%= link_to "See the Top list !!! more than 8 / 10", top_movies_path, class: 'gold-btn' %>
+  </div>
+
+<!-- =============================iteration pour afficher les listes=========================================== -->
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="bg-card my-5">
+        <p class="text-center"><%= list.name %></p>
+        <div class='text-center'>
+          <p><%= link_to "See the list", list_path(list) %> ||
+          <%= link_to "Delete the list", list_path(list),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

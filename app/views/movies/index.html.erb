@@ -8,7 +8,7 @@
     <p><%= movie.overview %></p>
     <p><%= movie.poster_url %></p>
     <p><%= movie.rating %></p>
-    <%= link_to "See the movie", movie_path(movie) %>
+
     <%= link_to "Add the movie at your list", list_movie_bookmarks_path(@list,movie), data: {turbo_method: :post} %>
   </li>
   <% end %>
